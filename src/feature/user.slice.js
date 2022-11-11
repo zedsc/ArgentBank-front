@@ -27,14 +27,12 @@ export const userSlice = createSlice({
     error: "false",
   },
   reducers: {
-    setUserDatas: (state, { payload }) => {
-      // { payload } destructuré = action.payload, ancinnement action à la place de
-      //{ payload } qu'on peut remplacer par payload tout seul
-      state.userDatas = payload; //user défini au-dessus
-    },
-    setIsAuth: (state, { payload }) => {
-      state.isAuth = payload;
-    },
+    // setUserDatas: (state, { payload }) => {
+    //   state.userDatas = payload;
+    // },
+    // setIsAuth: (state, { payload }) => {
+    //   state.isAuth = payload;
+    // },
     setUserLogout: (state) => {
       state.userDatas = {};
       state.status = "idle";
