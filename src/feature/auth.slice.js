@@ -42,7 +42,6 @@ const authSlice = createSlice({
       state.status = "idle";
       state.error = "false";
       sessionStorage.clear();
-      localStorage.clear();
     },
   },
   extraReducers: {
