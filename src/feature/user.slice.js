@@ -19,24 +19,43 @@ export const getUserInfos = createAsyncThunk(
   }
 );
 
+// Update user datas
+export const updateUserInfos = createAsyncThunk(
+  "user/updateDatas",
+  async (profileNames, { getState, rejectWithValue }) => {
+    const token = getState().auth.userToken;
+    const sendToken = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    try {
+      const response = await axios.put(
+        BASE_URL + "profile",
+        profileNames,
+        sendToken
+      );
+      console.log(response.data.body);
+      return response?.data.body;
+    } catch (err) {
+      console.log(err);
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
 export const userSlice = createSlice({
   name: "user",
   initialState: {
     userDatas: {},
     status: "idle",
     error: "false",
+    update: "idle",
   },
   reducers: {
-    // setUserDatas: (state, { payload }) => {
-    //   state.userDatas = payload;
-    // },
-    // setIsAuth: (state, { payload }) => {
-    //   state.isAuth = payload;
-    // },
     setUserLogout: (state) => {
       state.userDatas = {};
       state.status = "idle";
-      state.rror = "false";
+      state.error = "false";
+      state.update = "idle";
     },
   },
   extraReducers: {
@@ -51,8 +70,20 @@ export const userSlice = createSlice({
       state.status = "failed";
       state.error = payload.message;
     },
+    [updateUserInfos.pending]: (state) => {
+      state.update = "loading";
+    },
+    [updateUserInfos.fulfilled]: (state, { payload }) => {
+      state.update = "succeded";
+      state.userDatas.firstName = payload.firstName;
+      state.userDatas.lastName = payload.lastName;
+    },
+    [updateUserInfos.rejected]: (state, { payload }) => {
+      state.update = "failed";
+      state.updateError = payload.message;
+    },
   },
 });
 
-export const { setUserDatas, setIsAuth, setUserLogout } = userSlice.actions;
+export const { setUserLogout } = userSlice.actions;
 export default userSlice.reducer;
