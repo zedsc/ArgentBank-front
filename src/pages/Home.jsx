@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Header from "../components/header";
+import Header from "../components/header/Header";
 import Hero from "../components/Hero";
 import axios from "axios";
 import Asset from "../components/Asset";
@@ -36,7 +36,7 @@ const Home = () => {
         <AssetsSection>
           <SrTitle>Features</SrTitle>
           {assets.map((asset, index) => (
-            <Asset key={asset.index} item={asset} />
+            <Asset key={index} item={asset} />
           ))}
         </AssetsSection>
       </main>

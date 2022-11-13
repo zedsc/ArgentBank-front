@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Footer from "../components/Footer";
-import Header from "../components/header";
+import Header from "../components/header/Header";
 import SignInForm from "../components/SignInForm";
 import { degradedGreys } from "../utils/colors";
 
