@@ -5,27 +5,10 @@ import styled from "styled-components";
 import UserName from "../components/UserName";
 import { degradedGreys } from "../utils/colors";
 import BankAccount from "../components/BankAccount";
-
-const bankDatas = [
-  {
-    title: "Argent Bank Checking",
-    lastNb: 8349,
-    balance: 2082.79,
-    balanceDesc: "Available Balance",
-  },
-  {
-    title: "Argent Banl Savings",
-    lastNb: 6712,
-    balance: 10928.42,
-    balanceDesc: "Available Balance",
-  },
-  {
-    title: "Argent Bank Credit Card",
-    lastNb: 8349,
-    balance: 184.3,
-    balanceDesc: "Current Balance",
-  },
-];
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserInfos } from "../feature/user.slice";
+import { bankDatas } from "../utils/mockBankDatas";
 
 const DarkBg = styled.main`
   flex: 1;
@@ -49,6 +32,17 @@ const SrTitle = styled.h2`
 `;
 
 const UserProfil = () => {
+  const dispatch = useDispatch();
+  const token = useSelector((state) => state.auth.userToken);
+
+  useEffect(() => {
+    console.log(token);
+    const sendToken = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    dispatch(getUserInfos(sendToken));
+  }, [dispatch, token]);
+
   return (
     <PageContent>
       <Header />
