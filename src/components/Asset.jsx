@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { degradedGreys, colors } from "../utils/colors";
+import { gradientGreys, colors } from "../utils/colors";
 
 const ItemContainer = styled.div`
   flex: 1;
@@ -16,7 +16,7 @@ const ItemImg = styled.img`
 `;
 
 const ItemTitle = styled.h3`
-  color: ${degradedGreys.gray4};
+  color: ${gradientGreys.gray4};
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;

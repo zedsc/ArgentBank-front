@@ -1,4 +1,4 @@
-export const degradedGreys = {
+export const gradientGreys = {
   gray1: "#ccc",
   gray2: "#2c3e50",
   gray3: "#12002b",

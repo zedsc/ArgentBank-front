@@ -2,9 +2,9 @@ import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/header/Header";
 import styled from "styled-components";
-import UserName from "../components/UserName";
-import { degradedGreys } from "../utils/colors";
-import BankAccount from "../components/BankAccount";
+import UserName from "../components/userName/UserName";
+import { gradientGreys } from "../utils/colors";
+import BankAccount from "../components/bankAccount/BankAccount";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserInfos } from "../feature/user.slice";
@@ -12,7 +12,7 @@ import { bankDatas } from "../utils/mockBankDatas";
 
 const DarkBg = styled.main`
   flex: 1;
-  background-color: ${degradedGreys.gray3};
+  background-color: ${gradientGreys.gray3};
 `;
 
 const PageContent = styled.div`

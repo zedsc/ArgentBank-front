@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import Header from "../components/header/Header";
-import SignInForm from "../components/SignInForm";
-import { degradedGreys } from "../utils/colors";
+import SignInForm from "../components/signinForm/SignInForm";
+import { gradientGreys } from "../utils/colors";
 
 const DarkBg = styled.main`
   flex: 1;
-  background-color: ${degradedGreys.gray3};
+  background-color: ${gradientGreys.gray3};
 `;
 
 const PageContent = styled.div`

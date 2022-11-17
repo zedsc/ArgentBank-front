@@ -1,6 +1,6 @@
 import React from "react";
 import { createGlobalStyle, css } from "styled-components";
-import { degradedGreys } from "./colors";
+import { gradientGreys } from "./colors";
 
 const Reset = css`
   * {
@@ -24,7 +24,7 @@ const BaseStyles = css`
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: ${degradedGreys.gray2};
+    color: ${gradientGreys.gray2};
   }
 
   body {

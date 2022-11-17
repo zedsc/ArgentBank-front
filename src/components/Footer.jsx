@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { degradedGreys } from "../utils/colors";
+import { gradientGreys } from "../utils/colors";
 
 const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
-  border-top: 2px solid ${degradedGreys.gray1};
+  border-top: 2px solid ${gradientGreys.gray1};
   padding: 2rem 0 1.5rem;
 `;
 const TextFooter = styled.p`

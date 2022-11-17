@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { degradedGreys, colors } from "../../utils/colors";
+import { gradientGreys, colors } from "../../utils/colors";
 
 const StyledLink = styled(NavLink)`
   text-decoration: none;
@@ -10,7 +10,7 @@ const StyledLink = styled(NavLink)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${degradedGreys.gray2};
+  color: ${gradientGreys.gray2};
   &:hover {
     text-decoration: underline;
   }
