@@ -10,4 +10,5 @@ export const colors = {
   secondary: "#42b983",
   white: "#fff",
   black: "#000",
+  warning: "#e5431b",
 };
