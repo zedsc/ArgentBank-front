@@ -46,9 +46,18 @@ export const SubmitBtn = styled.button`
   font-weight: bold;
   margin-top: 1rem;
   background-color: ${colors.primary};
-  color: #fff;
+  color: ${colors.white};
   border: 1px solid ${colors.primary};
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const ErrorMsg = styled.p`
+  display: ${(props) => (props.error ? "block" : "none")};
+  color: ${colors.warning};
+  padding: 10px;
+  margin: 20px 0;
+  font-weight: bold;
+  border: 1px solid ${colors.warning};
 `;

@@ -1,9 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 import { logIn, setUserName, setRememberMe } from "../../feature/auth.slice";
 import {
   FormContainer,
@@ -14,6 +13,7 @@ import {
   RememberContent,
   RememberLabel,
   SubmitBtn,
+  ErrorMsg,
 } from "./signInForm.styled";
 
 const SignInForm = () => {
@@ -25,6 +25,8 @@ const SignInForm = () => {
   const token = useSelector((state) => state.auth.userToken);
   const rememberMe = useSelector((state) => state.auth.rememberMe);
   const userName = useSelector((state) => state.auth.userName);
+  const [errorText, setErrorText] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -53,9 +55,16 @@ const SignInForm = () => {
     if (authStatus === "succeded") {
       if (rememberMe) {
         dispatch(setUserName(inputUserName.current.value));
+      } else {
+        dispatch(setUserName(""));
       }
       //sessionStorage.setItem("token", token);
-      navigate("/user");
+      navigate("/profile");
+      setErrorText("");
+      setIsError(false);
+    } else if (authStatus === "failed") {
+      setErrorText("Wrong password and/or username");
+      setIsError(true);
     }
   }, [authStatus, navigate, token, dispatch, rememberMe]);
 
@@ -63,6 +72,7 @@ const SignInForm = () => {
     <FormContainer>
       <FaUserCircle size={60} />
       <FormTitle>Sign In</FormTitle>
+      <ErrorMsg error={isError}>{errorText}</ErrorMsg>
       <form onSubmit={(event) => handleSubmit(event)}>
         <FormContent>
           <FormLabel htmlFor="username">Username</FormLabel>
