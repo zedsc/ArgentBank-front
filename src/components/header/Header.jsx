@@ -37,13 +37,13 @@ const Header = () => {
           <StyledContainer>
             <NavBtn
               iconName={<FaUserCircle />}
-              path="/user"
+              path="/profile"
               text={user.firstName}
             />
             <div className="logout-btn" onClick={() => logOut()}>
               <NavBtn
                 iconName={<FaSignOutAlt />}
-                path="/sign-in"
+                path="/login"
                 text="Sign Out"
               />
             </div>
@@ -57,7 +57,7 @@ const Header = () => {
     <StyledHeader>
       <Logo />
       <nav>
-        <NavBtn iconName={<FaUserCircle />} path="/sign-in" text="Sign In" />
+        <NavBtn iconName={<FaUserCircle />} path="/login" text="Sign In" />
       </nav>
     </StyledHeader>
   );
