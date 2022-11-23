@@ -3,9 +3,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const BASE_URL = "http://localhost:3001/api/v1/user/";
 
-const userToken = sessionStorage.getItem("token")
-  ? sessionStorage.getItem("token")
-  : null;
+// const userToken = sessionStorage.getItem("token")
+//   ? sessionStorage.getItem("token")
+//   : null;
 
 // Authentification - login
 export const logIn = createAsyncThunk(
@@ -26,7 +26,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState: {
     userName: "",
-    userToken,
+    userToken: null,
     rememberMe: false,
     status: "idle",
     error: "false",
@@ -35,10 +35,11 @@ const authSlice = createSlice({
     setRememberMe: (state, { payload }) => {
       state.rememberMe = payload;
     },
+    setUserName: (state, { payload }) => {
+      state.userName = payload;
+    },
     setAuthLogout: (state) => {
-      state.userName = "";
       state.userToken = null;
-      state.rememberMe = false;
       state.status = "idle";
       state.error = "false";
       sessionStorage.clear();
@@ -59,5 +60,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { setRememberMe, setAuthLogout } = authSlice.actions;
+export const { setRememberMe, setUserName, setAuthLogout } = authSlice.actions;
 export default authSlice.reducer;
