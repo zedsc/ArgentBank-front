@@ -36,13 +36,15 @@ const SignInForm = () => {
       password: inputUserPassword.current.value,
     };
 
-    console.log("userCredentials", userLoginCredentials);
-
     dispatch(logIn(userLoginCredentials));
   };
 
   const handleCheckbox = (event) => {
     dispatch(setRememberMe(event.target.checked));
+  };
+
+  const handleFocus = () => {
+    setIsError(false);
   };
 
   useEffect(() => {
@@ -58,7 +60,6 @@ const SignInForm = () => {
       } else {
         dispatch(setUserName(""));
       }
-      //sessionStorage.setItem("token", token);
       navigate("/profile");
       setErrorText("");
       setIsError(false);
@@ -76,11 +77,21 @@ const SignInForm = () => {
       <form onSubmit={(event) => handleSubmit(event)}>
         <FormContent>
           <FormLabel htmlFor="username">Username</FormLabel>
-          <FormInput type="text" id="username" ref={inputUserName} />
+          <FormInput
+            type="text"
+            id="username"
+            ref={inputUserName}
+            onInput={() => handleFocus()}
+          />
         </FormContent>
         <FormContent>
           <FormLabel htmlFor="password">Password</FormLabel>
-          <FormInput type="password" id="password" ref={inputUserPassword} />
+          <FormInput
+            type="password"
+            id="password"
+            ref={inputUserPassword}
+            onInput={() => handleFocus()}
+          />
         </FormContent>
         <RememberContent>
           {rememberMe ? (
