@@ -6,7 +6,7 @@ export const bankDatas = [
     balanceDesc: "Available Balance",
   },
   {
-    title: "Argent Banl Savings",
+    title: "Argent Bank Savings",
     lastNb: 6712,
     balance: 10928.42,
     balanceDesc: "Available Balance",
