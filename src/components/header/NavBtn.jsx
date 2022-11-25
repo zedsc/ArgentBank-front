@@ -21,6 +21,12 @@ const StyledLink = styled(NavLink)`
 
 const IconContainer = styled.div`
   margin-right: 0.2rem;
+`;
+
+const TextLink = styled.p`
+  font-size: 0.7rem;
+  @media (min-width: 720px) {
+    font-size: 1rem;
   }
 `;
 
@@ -28,7 +34,7 @@ const NavBtn = ({ iconName, path, text }) => {
   return (
     <StyledLink to={path}>
       <IconContainer>{iconName}</IconContainer>
-      {text}
+      <TextLink>{text}</TextLink>
     </StyledLink>
   );
 };
