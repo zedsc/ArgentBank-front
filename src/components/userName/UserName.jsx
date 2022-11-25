@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUserInfos } from "../../feature/user.slice";
@@ -18,7 +19,6 @@ import {
 const UserName = () => {
   const [edit, setEdit] = useState(false);
   const user = useSelector((state) => state.user.userDatas);
-  console.log(edit, "edit statut");
   const inputFirstName = useRef();
   const inputLastName = useRef();
   const updateStatus = useSelector((state) => state.user.update);
@@ -37,11 +37,14 @@ const UserName = () => {
 
     if (inputFirstNameCurrent !== "" && inputLastNameCurrent !== "") {
       dispatch(updateUserInfos(userProfileInfos));
-      if (updateStatus === "succeded") {
-        setEdit(false);
-      }
     }
   };
+
+  useEffect(() => {
+    if (updateStatus === "succeded") {
+      setEdit(false);
+    }
+  }, [updateStatus]);
 
   return edit ? (
     <TitleContent>
