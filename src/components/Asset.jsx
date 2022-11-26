@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { gradientGreys, colors } from "../utils/colors";
 
 const ItemContainer = styled.div`
@@ -32,6 +33,9 @@ const Asset = ({ item }) => {
       <ItemText>{item.text}</ItemText>
     </ItemContainer>
   );
+};
+Asset.propTypes = {
+  item: PropTypes.object.isRequired,
 };
 
 export default Asset;

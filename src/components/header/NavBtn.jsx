@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { gradientGreys, colors } from "../../utils/colors";
 
 const StyledLink = styled(NavLink)`
@@ -39,4 +40,9 @@ const NavBtn = ({ iconName, path, text }) => {
   );
 };
 
+NavBtn.propTypes = {
+  iconName: PropTypes.element,
+  path: PropTypes.string.isRequired,
+  text: PropTypes.string,
+};
 export default NavBtn;

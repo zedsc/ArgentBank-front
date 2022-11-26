@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useTable } from "react-table";
 import { StyledTable } from "./transactionsTable.styled";
 
@@ -102,6 +103,10 @@ const TransactionsTable = ({ accountBalance }) => {
       </table>
     </StyledTable>
   );
+};
+
+TransactionsTable.propTypes = {
+  accountBalance: PropTypes.string,
 };
 
 export default TransactionsTable;

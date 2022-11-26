@@ -1,5 +1,6 @@
 import React from "react";
 import { formatNumber } from "../../utils/formatNumber";
+import PropTypes from "prop-types";
 import {
   AccountAmount,
   AccountBalance,
@@ -11,7 +12,6 @@ import {
 } from "./bankAccount.styled";
 
 const BankAccount = ({ userAccount }) => {
-  console.log(userAccount);
   return (
     <AccountContainer>
       <AccountDesc>
@@ -30,4 +30,7 @@ const BankAccount = ({ userAccount }) => {
   );
 };
 
+BankAccount.propTypes = {
+  userAccount: PropTypes.object.isRequired,
+};
 export default BankAccount;
