@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+![LogoArgentbank](public\img\logo_argentBank.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![StyledComponents](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+ArgentBank is a banking application. The aim of this project is:
 
-### `npm start`
+- to convert the existing base of the project to React
+- to allow customers to log in and manage their accounts and profile
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Project 13 of the OpenClassrooms [JavaScript React Developer](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react) training program.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Overview
 
-### `npm test`
+Work in progress
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+👉 **[Live demo]()**
 
-### `npm run build`
+#### Resources
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Argent Bank API](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API) | [Existing designs](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API/tree/master/designs)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You need to have **[Node.js v16.15 or higher](https://nodejs.org/en/)** installed on your computer. You also need the **[Argent Bank API](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API)** running for this project to work.
 
-### `npm run eject`
+- Install [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) on your system
+- Clone or download the project
+- Install dependencies with `npm i` or `yarn`
+- Start the project with `npm start` or `yarn start`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [![React](https://img.shields.io/github/package-json/dependency-version/zedsc/ArgentBank-front/react)](https://reactjs.org/)
+- [![axios](https://img.shields.io/github/package-json/dependency-version/zedsc/ArgentBank-front/axios)](https://axios-http.com/docs/intro)
+- [![react-redux](https://img.shields.io/github/package-json/dependency-version/zedsc/ArgentBank-front/react-redux)](https://react-redux.js.org/)
+- [![redux-persist](https://img.shields.io/github/package-json/dependency-version/zedsc/ArgentBank-front/redux-persist)](https://github.com/rt2zz/redux-persist)
+- [![proptypes](https://img.shields.io/github/package-json/dependency-version/zedsc/sportsee/prop-types)](https://reactjs.org/docs/typechecking-with-proptypes.html#gatsby-focus-wrapper)
+- [![styled-components](https://img.shields.io/github/package-json/dependency-version/zedsc/ArgentBank-front/styled-components)](https://styled-components.com/)
+- [![react-table](https://img.shields.io/github/package-json/dependency-version/zedsc/ArgentBank-front/react-table)](https://tanstack.com/table/v8/?from=reactTableV7&original=https://react-table-v7.tanstack.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Built with
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[React](https://reactjs.org/)
 
-## Learn More
+A JavaScript library for building user interfaces
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is project 13 out of 14 of OpenClassrooms [JavaScript React Developer](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react) training. While you can reuse the code, visual resources may not be free of right.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Skills & aim of the project
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Implementing a state manager in a React application
+- Interacting with an API
+- Modeling an API
+- Authenticating to an API
