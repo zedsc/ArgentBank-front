@@ -98,13 +98,14 @@ const SignInForm = () => {
             <input
               type="checkbox"
               id="remember-me"
-              checked
+              checked={true}
               onChange={(event) => handleCheckbox(event)}
             />
           ) : (
             <input
               type="checkbox"
               id="remember-me"
+              checked={false}
               onChange={(event) => handleCheckbox(event)}
             />
           )}
