@@ -35,8 +35,8 @@ const UserProfil = () => {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.userToken);
 
+  //Get token after auth success to get user datas
   useEffect(() => {
-    console.log(token);
     const sendToken = {
       headers: { Authorization: `Bearer ${token}` },
     };

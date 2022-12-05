@@ -33,6 +33,7 @@ const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
 
+// Middleware: to avoid console errors
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
@@ -45,12 +46,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-
-// export default configureStore({
-//   reducer: {
-//     user: userReducer,
-//     auth: authReducer,
-//   },
-//   devTools: process.env.NODE_ENV !== "production",
-//   //devTools: false
-// });

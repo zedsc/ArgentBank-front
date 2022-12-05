@@ -10,7 +10,6 @@ export const getUserInfos = createAsyncThunk(
   async (token, { rejectWithValue }) => {
     try {
       const response = await axios.post(BASE_URL + "profile", "", token);
-      console.log(response.data.body);
       return response?.data.body;
     } catch (err) {
       console.log(err);
@@ -33,7 +32,6 @@ export const updateUserInfos = createAsyncThunk(
         profileNames,
         sendToken
       );
-      console.log(response.data.body);
       return response?.data.body;
     } catch (err) {
       console.log(err);

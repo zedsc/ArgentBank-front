@@ -3,17 +3,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const BASE_URL = "http://localhost:3001/api/v1/user/";
 
-// const userToken = sessionStorage.getItem("token")
-//   ? sessionStorage.getItem("token")
-//   : null;
-
 // Authentification - login
 export const logIn = createAsyncThunk(
   "auth/login",
   async (loginCredentials, { rejectWithValue }) => {
     try {
       const response = await axios.post(BASE_URL + "login", loginCredentials);
-      console.log(response.data.body.token);
       return response?.data.body.token;
     } catch (err) {
       console.log(err);

@@ -39,20 +39,24 @@ const SignInForm = () => {
     dispatch(logIn(userLoginCredentials));
   };
 
+  //Set state rememberMe true or false
   const handleCheckbox = (event) => {
     dispatch(setRememberMe(event.target.checked));
   };
 
+  //Dismiss error when focus input
   const handleFocus = () => {
     setIsError(false);
   };
 
+  //Fill username input if user selected "remember me"
   useEffect(() => {
     userName
       ? (inputUserName.current.value = userName)
       : (inputUserName.current.value = "");
   }, [userName]);
 
+  //Handle states depending on auth status and rememberMe
   useEffect(() => {
     if (authStatus === "succeded") {
       if (rememberMe) {

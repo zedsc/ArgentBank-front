@@ -54,7 +54,6 @@ const AccountDesc = styled.p`
 const Transactions = () => {
   const location = useLocation();
   const { userAccount } = location.state;
-  console.log(userAccount);
   return (
     <PageContent>
       <Header />
