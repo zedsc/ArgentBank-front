@@ -17,7 +17,7 @@ Project 13 of the OpenClassrooms [JavaScript React Developer](https://openclassr
 
 #### Overview
 
-Work in progress
+👉 **[Live demo](https://argent-bank-front.vercel.app/)**
 
 #### Resources
 
